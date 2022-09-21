@@ -1,0 +1,70 @@
+<!-- <p>add-book works!</p>
+<button routerLink="/">
+   Go back
+</button>
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">titl</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="tutorial.username"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">password</label>
+          <input
+           type="password"
+            class="form-control"
+            id="password"
+            required
+            [(ngModel)]="tutorial.password"
+            name="password"
+          />
+        </div>
+        <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Add</button>
+      </div>
+    </div>
+  </div>
+ -->
+<!-- <form [formGroup]="form" (submit)="submit()">
+  <input formControlName="username" type="text" class="form-control" placeholder="username" required>
+  <input formControlName="username" type="password" class="form-control" placeholder="password" required>
+  <button type=submit >sign in</button>
+
+</form> -->
+<button routerLink="/">
+  Go back
+</button>
+
+<div class="container">
+  <br />
+  <h2>Login</h2>
+  <br />
+  <div class="row col-md-6">
+    <form [formGroup]="form" (submit)="login()">
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="username" formControlName = "username" required />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          formControlName = "password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

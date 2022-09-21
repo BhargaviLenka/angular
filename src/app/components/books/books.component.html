@@ -1,0 +1,34 @@
+<div>    
+    <div class="row" style="margin-top:10px;margin-bottom: 10px;">    
+      <div class="col-sm-12 btn btn-success">    
+        Loader in Angular Application with Dynamic  Data     
+      </div>    
+    </div>    
+    <div class="row" style="margin-top:10px;margin-bottom: 10px;">    
+    </div>    
+  </div>    
+  <hr style="background-color:black" />    
+  
+<div>  
+    <table class="table table-dark table-striped">  
+      <thead>  
+        <tr>   
+          <th>s.no</th>
+          <th>book</th>  
+          <th>Author</th>  
+          <th>isbn</th>
+          <th>category</th>
+        </tr>  
+      </thead>  
+      <tbody>  
+        <tr *ngFor="let e of emp ,let row=index "> 
+          <td>{{row+1}}</td> 
+          <td >{{e.name}}</td>  
+          <td >{{e.author}}</td> 
+          <td>{{e.isbn}}</td>
+          <td>{{e.category}}</td>
+          <td><button class="btn btn-danger" (click)="f(e.isbn)" onclick="return confirm('Are you sure you want to delete this student?')">Delete</button></td>   
+        </tr>  
+      </tbody> 
+    </table>  
+  </div> 

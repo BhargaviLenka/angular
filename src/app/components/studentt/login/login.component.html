@@ -1,0 +1,85 @@
+<body>
+
+  <section class="h-100">
+  <div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="col">
+  <div class="card card-registration my-4">
+  <div class="row g-0">
+  <!-- <div class="col-xl-6 d-none d-xl-block">
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+  alt="Sample photo" class="img-fluid"
+  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+  </div> -->
+  <div>
+  <div class="card-body p-md-5 text-black">
+  <h3 class="mb-5 text-uppercase">Registration form</h3>
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.username" #name="ngModel" required minlength="4" id="form3Example1m" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example1m">Username</label>
+  </div>
+  <div *ngIf="name.errors?.['required']">
+  <h1 style="color:red;">Name is required.</h1>
+  </div>
+  <div *ngIf="name.errors?.['minlength']">
+  <h1 style="color:red"> Name must be at least 4 characters long.</h1>
+  </div>
+  <!-- (input)="onUsername($event)" -->
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.first_name" id="form3Example97" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example97">firstname</label>
+  </div>
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.last_name" id="form3Example97" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example97">lastname</label>
+  </div>
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.phone" id="form3Example97" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example97">phone</label>
+  </div>
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.classroom" id="form3Example97" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example97">classroom</label>
+  </div>
+  
+  <div class="row">
+  <div class="col-md-6 mb-4">
+  <option>branch</option>
+  <select class="form-select" [(ngModel)]= "register.branch" aria-label="Default select example">
+  <option value="{{area}}" *ngFor="let area of branch">{{area}}</option>
+  </select>
+  </div>
+  </div>
+  <div class="form-outline mb-4">
+  <input type="text" [(ngModel)] = "register.email" id="form3Example97" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example97">Email ID</label>
+  </div>
+  <div class="form-outline mb-4">
+  <input type="password" [(ngModel)] = "register.password" id="form3Example9" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example9">password</label>
+  </div>
+  <!-- (input)="onPassword($event)" -->
+  <div class="form-outline mb-4">
+  <input type="password" [(ngModel)] = "register.confirm_password" id="form3Example90" class="form-control form-control-lg" />
+  <label class="form-label" for="form3Example90">Repeat password</label>
+  </div>
+  <!-- <label class="image-upload-container btn btn-bwm">
+  <span>Select Image</span>
+  <input #imageInput
+  type="file"
+  accept="image/*"
+  (change)="processFile(imageInput)">
+  </label> -->
+  <div class="d-flex justify-content-end pt-3">
+  <button type="button" (click)="saveTutorial()" class="btn btn-warning btn-lg ms-2">Submit form</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  </body>
+  

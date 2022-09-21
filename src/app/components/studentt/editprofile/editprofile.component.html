@@ -1,0 +1,54 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="author">first_name</label>
+          <input
+            class="form-control"
+            id="author"
+            required
+            [(ngModel)]="tutorial.first_name"
+            name="author"
+          />
+        </div>
+        <div class="form-group">
+          <label for="isbn">last_name</label>
+          <input
+            class="form-control"
+            id="isbn"
+            required
+            [(ngModel)]="tutorial.last_name"
+            name="isbn"
+          />
+        </div>
+        <div class="form-group">
+            <label for="isbn">branch</label>
+            <input
+              class="form-control"
+              id="isbn"
+              required
+              [(ngModel)]="tutorial.branch"
+              name="isbn"
+            />
+          </div>
+          <div class="form-group">
+            <label for="isbn">phone</label>
+            <input
+              class="form-control"
+              id="isbn"
+              required
+              [(ngModel)]="tutorial.phone"
+              name="isbn"
+            />
+          </div>
+        <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Add</button>
+      </div>
+      
+    </div>
+  </div>
+
+

@@ -1,0 +1,107 @@
+<button routerLink="/">
+  Go back
+</button>
+<mat-card class="mx-auto mt-5 " style="width: 400px;">
+  <form [formGroup]="registerform" >
+  <mat-card-title>Registration Form</mat-card-title>
+  <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput  formControlName="username" required ng-maxlength="5">
+          <span matSuffix style="padding-right:40px !important"></span>
+          <mat-error *ngIf="username.hasError('required')">
+              This Field is Required 
+          </mat-error>
+        <mat-error *ngIf="username.hasError('minlength')"> min length is 5</mat-error>
+        <mat-error *ngIf="username.hasError('maxlength')"> max length is 8</mat-error>
+        <!-- <mat-error *ngIf="alert"> username exists</mat-error> -->
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <br>
+  <small style="color: red;" *ngIf="valid()"> username is taken!!! </small>
+  <br>
+  <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput  formControlName="email" required>
+      <span matSuffix style="padding-right:40px !important"></span>
+      <mat-error *ngIf="email.hasError('required')">
+          This Field is Required 
+      </mat-error>
+      <mat-error *ngIf="email.hasError('pattern')"> enter a valid email</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>firstname</mat-label>
+    <input matInput  formControlName="first_name" required>
+    <span matSuffix style="padding-right:40px !important"></span>
+    <mat-error *ngIf="first_name.hasError('required')">
+        This Field is Required 
+    </mat-error>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>lastname</mat-label>
+  <input matInput  formControlName="last_name" required>
+  <span matSuffix style="padding-right:40px !important"></span>
+  <mat-error *ngIf="last_name.hasError('required')">
+      This Field is Required 
+  </mat-error>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Branch</mat-label>
+  <mat-select [(value)]="selected" formControlName="branch" required>
+    <mat-option>None</mat-option>
+    <mat-option value="ece">ece</mat-option>
+    <mat-option value="cse">cse</mat-option>
+    <mat-option value="eee">eee</mat-option>
+    <mat-option value="eie">eie</mat-option>
+    <mat-option value="it">it</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>class room</mat-label>
+  <mat-select  formControlName="classroom" required>
+    <mat-option>None</mat-option>
+    <mat-option value="A">A</mat-option>
+    <mat-option value="B">B</mat-option>
+    <mat-option value="c">C</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>phone</mat-label>
+  <input matInput  formControlName="phone" required>
+  <span matSuffix style="padding-right:40px !important"></span>
+  <mat-error *ngIf="phone.hasError('required')">
+      This Field is Required 
+  </mat-error> 
+  <mat-error *ngIf="phone.hasError('pattern')"> enter a valid number</mat-error>
+
+</mat-form-field>
+ <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+          <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.hasError('required')">
+              This Field is Required 
+          </mat-error>
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>confirm password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm_password" required>
+    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="confirm_password.hasError('required')">
+        This Field is Required 
+    </mat-error>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+</mat-form-field>
+<br>
+<small style="color:red" *ngIf="match()">password should match</small>
+<br>
+  <div>
+          <button class="text-center"  mat-raised-button color="primary" (click)="newreg()" [disabled]="!registerform.valid">Submit</button>
+  </div>
+  </form>
+</mat-card>
+
